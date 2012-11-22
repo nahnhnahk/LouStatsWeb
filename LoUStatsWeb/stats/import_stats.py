@@ -8,7 +8,7 @@ import httplib, urllib, json, random, pprint, pickle, time
 from datetime import datetime
 from models import PlayerScore
 
-sessionId = '820c2f76-dfd7-4ba2-9180-f102798ab866';
+sessionId = 'ea61577b-72fb-406e-99cf-0ce9a67d6996';
 
 header = {'Content-Type': 'application/json; charset=utf-8',
            'Cache-Control': 'no-cache',
@@ -18,7 +18,7 @@ header = {'Content-Type': 'application/json; charset=utf-8',
 conn = False
 
 def get_conn():
-    return httplib.HTTPConnection(host = "prodgame13.lordofultima.com", timeout = 1)
+    return httplib.HTTPConnection(host = "prodgame05.lordofultima.com", timeout = 1)
 #    global conn
 #    print conn
 #    if not conn:
@@ -33,7 +33,7 @@ def get_conn():
 def request(endpoint, params):
     time.sleep(1)
     conn = get_conn()
-    conn.request("POST", "/91/Presentation/Service.svc/ajaxEndpoint/" + endpoint, params, header)
+    conn.request("POST", "/197/Presentation/Service.svc/ajaxEndpoint/" + endpoint, params, header)
     response = conn.getresponse()
     print response.status
     if response.status != 200:
@@ -71,9 +71,6 @@ def import_stat():
         ps = PlayerScore( \
             index = player[translate_map['index']], \
             points = player[translate_map['points']])
-        ps.save()
-
-#conn = httplib.HTTPConnection("prodgame13.lordofultima.com")
-#conn.set_debuglevel(1)
-#import_stat()
+        print ps
+        #ps.save()
 #conn.close()
