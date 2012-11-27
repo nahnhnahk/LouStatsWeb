@@ -103,6 +103,7 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'LouStatsWeb.urls'
 
 TEMPLATE_DIRS = (
+    'C:/Users/Khanh-Nhan/Documents/GitHub/LouStatsWeb/Templates/stats'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -116,6 +117,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'LouStatsWeb.stats',
+    'djcelery',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
@@ -144,3 +146,18 @@ LOGGING = {
         },
     }
 }
+
+import djcelery
+djcelery.setup_loader()
+
+from datetime import timedelta
+
+CELERYBEAT_SCHEDULE = {
+    'runs-every-2-mins': {
+        'task': 'stats.tasks.add',
+        'schedule': timedelta(minutes = 2),
+        'args': (16, 16)
+    },
+}
+
+CELERY_TIMEZONE = 'UTC'

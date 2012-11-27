@@ -6,6 +6,13 @@
     <Name>LouStatsWeb</Name>
     <RootNamespace>LouStatsWeb</RootNamespace>
     <UseIISExpress>true</UseIISExpress>
+    <CommandLineArguments />
+    <InterpreterPath />
+    <InterpreterArguments />
+    <DjangoSettingsModule />
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <InterpreterId>9a7a9026-48c1-4688-9d5d-e5699d47d074</InterpreterId>
+    <InterpreterVersion>2.7</InterpreterVersion>
   </PropertyGroup>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -13,7 +20,7 @@
     <ProjectGuid>954c85cb-89ea-4856-81a6-47fdaaf6af8d</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
-    <StartupFile>manage.py</StartupFile>
+    <StartupFile>LouStatsWeb\manage.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -29,12 +36,15 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="LouStatsWeb\manage.py" />
     <Compile Include="LouStatsWeb\stats\import_stats.py" />
+    <Compile Include="LouStatsWeb\stats\LouAjaxLib.py" />
     <Compile Include="LouStatsWeb\stats\models.py" />
+    <Compile Include="LouStatsWeb\stats\tasks.py" />
+    <Compile Include="LouStatsWeb\stats\test.py" />
     <Compile Include="LouStatsWeb\stats\tests.py" />
     <Compile Include="LouStatsWeb\stats\views.py" />
     <Compile Include="LouStatsWeb\stats\__init__.py" />
-    <Compile Include="manage.py" />
     <Compile Include="LouStatsWeb\__init__.py" />
     <Compile Include="LouStatsWeb\settings.py" />
     <Compile Include="LouStatsWeb\urls.py" />
@@ -50,6 +60,11 @@
   <ItemGroup>
     <Folder Include="LouStatsWeb\" />
     <Folder Include="LouStatsWeb\stats\" />
+    <Folder Include="Templates\" />
+    <Folder Include="Templates\stats\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\stats\player.html" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>

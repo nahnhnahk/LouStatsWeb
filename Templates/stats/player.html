@@ -1,4 +1,63 @@
-<html>
-	<h1>Player stats:</h1>
-	{{ player_stats_img|safe }}
-</html>
+<!doctype html>
+<link type="text/css" rel="stylesheet" href="http://jqueryui.com/themes/base/jquery.ui.all.css">
+<link type="text/css" rel="stylesheet" href="http://code.shutterstock.com/rickshaw/src/css/graph.css">
+<link type="text/css" rel="stylesheet" href="http://code.shutterstock.com/rickshaw/src/css/detail.css">
+<link type="text/css" rel="stylesheet" href="http://code.shutterstock.com/rickshaw/src/css/legend.css">
+<link type="text/css" rel="stylesheet" href="http://code.shutterstock.com/rickshaw/examples/css/lines.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
+
+<script src="http://d3js.org/d3.v2.js"></script>
+<script src="http://d3js.org/d3.v2.min.js"></script>
+<script src="https://raw.github.com/shutterstock/rickshaw/master/rickshaw.min.js"></script>
+
+<div id="chart_container">
+    <div id="chart"></div>
+    <div id="legend_container">
+        <div id="smoother" title="Smoothing"></div>
+        <div id="legend"></div>
+    </div>
+    <div id="slider"></div>
+</div>
+
+<script> 
+ 
+    var graph = new Rickshaw.Graph({
+        element: document.querySelector("#chart"),
+        width: 960,
+        height: 500,
+        renderer: 'line',
+        series: [{
+            data: {{ data|safe }},
+            color: 'steelblue'
+        }]
+    });
+
+    graph.render();
+
+    var hoverDetail = new Rickshaw.Graph.HoverDetail( {
+        graph: graph
+    } );
+
+    var legend = new Rickshaw.Graph.Legend( {
+        graph: graph,
+        element: document.getElementById('legend')
+
+    } );
+
+    var shelving = new Rickshaw.Graph.Behavior.Series.Toggle( {
+        graph: graph,
+        legend: legend
+    } );
+
+    var axes = new Rickshaw.Graph.Axis.Time( {
+        graph: graph
+    } );
+    axes.render();
+
+    var yAxis = new Rickshaw.Graph.Axis.Y({
+        graph: graph
+    });
+    yAxis.render();
+ 
+</script>

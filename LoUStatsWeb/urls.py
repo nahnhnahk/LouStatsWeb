@@ -7,6 +7,8 @@ from django.conf.urls.defaults import patterns, include, url
 urlpatterns = patterns('',
     url(r'^stats/$', 'LouStatsWeb.stats.views.index'),
     url(r'^stats/refresh/$', 'LouStatsWeb.stats.views.refresh'),
+    url(r'^stats/graph/$', 'LouStatsWeb.stats.views.graph'),
+    url(r'^stats/u/(?P<id>\d+)/$', 'LouStatsWeb.stats.views.user'),
     # Examples:
     # url(r'^$', 'LoUStatsWeb.views.home', name='home'),
     # url(r'^LoUStatsWeb/', include('LoUStatsWeb.foo.urls')),
