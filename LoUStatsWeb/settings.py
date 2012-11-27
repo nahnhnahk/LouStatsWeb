@@ -100,7 +100,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'LouStatsWeb.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATE_DIRS = (
     'C:/Users/Khanh-Nhan/Documents/GitHub/LouStatsWeb/Templates/stats'
@@ -116,7 +116,7 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'LouStatsWeb.stats',
+    'stats',
     'djcelery',
     # Uncomment the next line to enable the admin:
     # 'django.contrib.admin',

@@ -5,10 +5,10 @@ from django.conf.urls.defaults import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^stats/$', 'LouStatsWeb.stats.views.index'),
-    url(r'^stats/refresh/$', 'LouStatsWeb.stats.views.refresh'),
-    url(r'^stats/graph/$', 'LouStatsWeb.stats.views.graph'),
-    url(r'^stats/u/(?P<id>\d+)/$', 'LouStatsWeb.stats.views.user'),
+    url(r'^stats/$', 'stats.views.index'),
+    url(r'^stats/refresh/$', 'stats.views.refresh'),
+    url(r'^stats/graph/$', 'stats.views.graph'),
+    url(r'^stats/u/(?P<id>\d+)/$', 'stats.views.user'),
     # Examples:
     # url(r'^$', 'LoUStatsWeb.views.home', name='home'),
     # url(r'^LoUStatsWeb/', include('LoUStatsWeb.foo.urls')),
