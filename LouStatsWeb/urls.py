@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     url(r'^stats/refresh/$', 'stats.views.refresh'),
     url(r'^stats/graph/$', 'stats.views.graph'),
     url(r'^stats/u/(?P<id>\d+)/$', 'stats.views.user'),
+    url(r'^stats/top10/$', 'stats.views.top10'),
     # Examples:
     # url(r'^$', 'LoUStatsWeb.views.home', name='home'),
     # url(r'^LoUStatsWeb/', include('LoUStatsWeb.foo.urls')),

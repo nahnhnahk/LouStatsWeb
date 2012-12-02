@@ -8,13 +8,13 @@ import httplib, urllib, json, random, pprint, pickle, time
 from datetime import datetime
 from models import PlayerScore, Player, World
 
-sessionId = '5f6ce529-39ca-4850-a8ff-4d1f99d92ac2';
+sessionId = 'b8b0f0c6-508f-4a0d-be08-a12f1f87002d';
 
 current_world = World.objects.get_or_create(name = "World 83", 
                                             host = "prodgame05.lordofultima.com", 
                                             ajax_end_point = "/197/Presentation/Service.svc/ajaxEndpoint/")[0]
 
-header = {'Content-Type': 'application/json; charset=utf-8',
+header = {'Content-Type': 'application/json',
            'Cache-Control': 'no-cache',
            'Pragma': 'no-cache',
            'X-Qooxdoo-Response-Type': 'application/json'}
@@ -79,6 +79,5 @@ def import_stat():
             points = player_score[translate_map['points']],
             rank = player_score[translate_map['rank']],
             timestamp = datetime.now())
-        print ps
         ps.save()
 #conn.close()
