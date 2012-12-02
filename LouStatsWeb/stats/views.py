@@ -22,7 +22,7 @@ def user(request, id):
     two_lists = zip(*[(ps.timestamp, ps.points) for ps in player_score])
     data = json.dumps([{'x': int((ps.timestamp - datetime.datetime(1970,1,1)).total_seconds()),
                         'y': ps.points} for ps in player_score])
-    return render_to_response('player.html', {'data': data})
+    return render_to_response('stats/player.html', {'data': data})
 
 #print "ASDKFASDKFJASDLKFJALSDFJ"
 #dt = datetime.timedelta(days=1)

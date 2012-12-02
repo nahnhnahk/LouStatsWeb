@@ -1,4 +1,5 @@
 # Django settings for LoUStatsWeb project.
+import os
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -102,8 +103,10 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'urls'
 
+PROJECT_PATH = os.path.realpath(os.path.dirname(__file__))
+
 TEMPLATE_DIRS = (
-    'C:/Users/Khanh-Nhan/Documents/GitHub/LouStatsWeb/Templates/stats'
+    PROJECT_PATH + '/Templates/'
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
