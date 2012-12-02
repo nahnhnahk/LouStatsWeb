@@ -22,15 +22,21 @@
 
 <script> 
  
+    var palette = new Rickshaw.Color.Palette( { scheme: 'colorwheel' } );
+
     var graph = new Rickshaw.Graph({
         element: document.querySelector("#chart"),
         width: 960,
         height: 500,
         renderer: 'line',
-        series: [{
-            data: {{ data|safe }},
-            color: 'steelblue'
-        }]
+        series: [
+        {% for data in series_data %}
+            {
+                data: {{ data|safe }},
+                color: palette.color()
+            },
+        {% endfor %}
+        ]
     });
 
     graph.render();

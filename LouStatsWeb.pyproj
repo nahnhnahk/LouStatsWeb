@@ -38,10 +38,7 @@
   <ItemGroup>
     <Compile Include="LouStatsWeb\manage.py" />
     <Compile Include="LouStatsWeb\stats\import_stats.py" />
-    <Compile Include="LouStatsWeb\stats\LouAjaxLib.py" />
     <Compile Include="LouStatsWeb\stats\models.py" />
-    <Compile Include="LouStatsWeb\stats\tasks.py" />
-    <Compile Include="LouStatsWeb\stats\test.py" />
     <Compile Include="LouStatsWeb\stats\tests.py" />
     <Compile Include="LouStatsWeb\stats\views.py" />
     <Compile Include="LouStatsWeb\stats\__init__.py" />
