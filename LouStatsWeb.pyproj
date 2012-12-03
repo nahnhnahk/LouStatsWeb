@@ -56,12 +56,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="LouStatsWeb\" />
+    <Folder Include="LouStatsWeb\static\" />
     <Folder Include="LouStatsWeb\stats\" />
-    <Folder Include="Templates\" />
-    <Folder Include="Templates\stats\" />
+    <Folder Include="LouStatsWeb\Templates\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Templates\stats\player.html" />
+    <Content Include="LouStatsWeb\static\Rickshaw.Graph.Axis.Y.js" />
+    <Content Include="LouStatsWeb\static\rickshaw.js" />
+    <Content Include="LouStatsWeb\Templates\player.html" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Python Tools\Microsoft.PythonTools.Django.targets" />
   <ProjectExtensions>

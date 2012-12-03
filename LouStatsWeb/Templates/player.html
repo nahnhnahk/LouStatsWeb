@@ -8,8 +8,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.15/jquery-ui.min.js"></script>
 
 <script src="http://d3js.org/d3.v2.js"></script>
-<script src="http://d3js.org/d3.v2.min.js"></script>
-<script src="https://raw.github.com/shutterstock/rickshaw/master/rickshaw.min.js"></script>
+<!--script src="https://raw.github.com/shutterstock/rickshaw/master/rickshaw.js"></script-->
+<script src="/static/rickshaw.js"></script>
 
 <div id="chart_container">
     <div id="chart"></div>
@@ -29,6 +29,7 @@
         width: 960,
         height: 500,
         renderer: 'line',
+        min: 'auto',
         series: [
         {% for data in series_data %}
             {
